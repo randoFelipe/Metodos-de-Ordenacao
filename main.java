@@ -11,8 +11,9 @@ public class main {
         /*for (int numero : array) {
             System.out.print(numero+"; ");
         }*/
-        
+
         System.out.println(measureTime()+" segundos");
+        bubbleSort(array);
     }
 
     public static int[] createRandomArray(){
@@ -32,7 +33,7 @@ public class main {
         return total;
     }
     public static void bubbleSort(int[] numArray) {
-        
+        long startTime = System.nanoTime();
         int n = numArray.length;
         int temp = 0;
         
@@ -47,6 +48,9 @@ public class main {
         
                 }
             }
+            long endTime = System.nanoTime();
+            long total = (endTime - startTime)/1000000000;
+            System.out.println("Demorou "+total);
         }
 }
 
